@@ -1,0 +1,171 @@
+gitlab_group.dev08_group
+gitlab_group_variable.group_variable
+gitlab_project.dev08_poject
+gitlab_project_access_token.dev08_token
+# gitlab_group.dev08_group:
+resource "gitlab_group" "dev08_group" {
+    auto_devops_enabled                = false
+    avatar_url                         = [90mnull[0m[0m
+    default_branch_protection          = 2
+    description                        = "created via Terraform groups dev08"
+    emails_enabled                     = true
+    extra_shared_runners_minutes_limit = 0
+    full_name                          = "dev08TF"
+    full_path                          = "dev08TF"
+    id                                 = "7"
+    ip_restriction_ranges              = []
+    lfs_enabled                        = true
+    membership_lock                    = false
+    mentions_disabled                  = false
+    name                               = "dev08TF"
+    parent_id                          = 0
+    path                               = "dev08TF"
+    permanently_remove_on_delete       = false
+    prevent_forking_outside_group      = false
+    project_creation_level             = "developer"
+    request_access_enabled             = true
+    require_two_factor_authentication  = false
+    runners_token                      = (sensitive value)
+    share_with_group_lock              = false
+    shared_runners_minutes_limit       = 0
+    shared_runners_setting             = "enabled"
+    subgroup_creation_level            = "maintainer"
+    two_factor_grace_period            = 48
+    visibility_level                   = "public"
+    web_url                            = "http://gitlab.loc/groups/dev08TF"
+    wiki_access_level                  = "enabled"
+}
+
+# gitlab_group_variable.group_variable:
+resource "gitlab_group_variable" "group_variable" {
+    description       = [90mnull[0m[0m
+    environment_scope = "*"
+    group             = "7"
+    id                = "7:Jira_token:*"
+    key               = "Jira_token"
+    masked            = false
+    protected         = false
+    raw               = false
+    value             = "dsfhisdifhsdhg212"
+    variable_type     = "env_var"
+}
+
+# gitlab_project.dev08_poject:
+resource "gitlab_project" "dev08_poject" {
+    allow_merge_on_skipped_pipeline                  = false
+    analytics_access_level                           = "enabled"
+    approvals_before_merge                           = 0
+    archived                                         = false
+    auto_cancel_pending_pipelines                    = "enabled"
+    auto_devops_deploy_strategy                      = "continuous"
+    auto_devops_enabled                              = true
+    autoclose_referenced_issues                      = true
+    avatar_url                                       = [90mnull[0m[0m
+    build_coverage_regex                             = [90mnull[0m[0m
+    build_git_strategy                               = "fetch"
+    build_timeout                                    = 3600
+    builds_access_level                              = "enabled"
+    ci_config_path                                   = [90mnull[0m[0m
+    ci_default_git_depth                             = 20
+    ci_forward_deployment_enabled                    = true
+    ci_restrict_pipeline_cancellation_role           = [90mnull[0m[0m
+    ci_separated_caches                              = true
+    container_registry_access_level                  = "enabled"
+    container_registry_enabled                       = true
+    default_branch                                   = "main"
+    description                                      = " created via Terraform project dev08"
+    emails_enabled                                   = true
+    empty_repo                                       = false
+    environments_access_level                        = "enabled"
+    external_authorization_classification_label      = [90mnull[0m[0m
+    feature_flags_access_level                       = "enabled"
+    forked_from_project_id                           = 0
+    forking_access_level                             = "enabled"
+    group_runners_enabled                            = true
+    http_url_to_repo                                 = "http://gitlab.loc/dev08TF/dev08.git"
+    id                                               = "3"
+    import_url                                       = [90mnull[0m[0m
+    infrastructure_access_level                      = "enabled"
+    initialize_with_readme                           = true
+    issues_access_level                              = "enabled"
+    issues_enabled                                   = true
+    issues_template                                  = [90mnull[0m[0m
+    keep_latest_artifact                             = true
+    lfs_enabled                                      = true
+    merge_commit_template                            = [90mnull[0m[0m
+    merge_method                                     = "merge"
+    merge_pipelines_enabled                          = false
+    merge_requests_access_level                      = "enabled"
+    merge_requests_enabled                           = true
+    merge_requests_template                          = [90mnull[0m[0m
+    merge_trains_enabled                             = false
+    mirror                                           = false
+    mirror_overwrites_diverged_branches              = false
+    mirror_trigger_builds                            = false
+    monitor_access_level                             = "enabled"
+    mr_default_target_self                           = false
+    name                                             = "dev08"
+    namespace_id                                     = 7
+    only_allow_merge_if_all_discussions_are_resolved = false
+    only_allow_merge_if_pipeline_succeeds            = false
+    only_mirror_protected_branches                   = false
+    packages_enabled                                 = true
+    pages_access_level                               = "enabled"
+    path                                             = "dev08"
+    path_with_namespace                              = "dev08TF/dev08"
+    pipelines_enabled                                = true
+    printing_merge_request_link_enabled              = true
+    public_jobs                                      = true
+    releases_access_level                            = "enabled"
+    remove_source_branch_after_merge                 = true
+    repository_access_level                          = "enabled"
+    repository_storage                               = "default"
+    request_access_enabled                           = true
+    requirements_access_level                        = "enabled"
+    resolve_outdated_diff_discussions                = false
+    restrict_user_defined_variables                  = false
+    runners_token                                    = (sensitive value)
+    security_and_compliance_access_level             = "private"
+    shared_runners_enabled                           = true
+    snippets_access_level                            = "enabled"
+    snippets_enabled                                 = true
+    squash_commit_template                           = [90mnull[0m[0m
+    squash_option                                    = "default_off"
+    ssh_url_to_repo                                  = "git@gitlab.loc:dev08TF/dev08.git"
+    suggestion_commit_message                        = [90mnull[0m[0m
+    tags                                             = []
+    topics                                           = []
+    visibility_level                                 = "public"
+    web_url                                          = "http://gitlab.loc/dev08TF/dev08"
+    wiki_access_level                                = "enabled"
+    wiki_enabled                                     = true
+
+    container_expiration_policy {
+        cadence           = "1d"
+        enabled           = false
+        keep_n            = 10
+        name_regex        = ".*"
+        name_regex_delete = ".*"
+        name_regex_keep   = [90mnull[0m[0m
+        next_run_at       = "2024-09-20T13:19:10Z"
+        older_than        = "90d"
+    }
+}
+
+# gitlab_project_access_token.dev08_token:
+resource "gitlab_project_access_token" "dev08_token" {
+    access_level = "maintainer"
+    active       = true
+    created_at   = "2024-09-19 13:24:19.894 +0000 UTC"
+    expires_at   = "2024-12-31"
+    id           = "3:4"
+    name         = "example-token"
+    project      = "3"
+    revoked      = false
+    scopes       = [
+        "api",
+        "write_repository",
+    ]
+    token        = (sensitive value)
+    user_id      = 3
+}
