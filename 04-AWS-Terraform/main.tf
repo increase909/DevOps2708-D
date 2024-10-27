@@ -5,15 +5,16 @@ provider "aws" {
 }
  
 #S3 Backet and DynamoDB
- terraform {
+  terraform {
   backend "s3" {
     bucket         = "tfbackstate2708"
     key            = "terraform/state"
-    region         = "us-east-1"
+    region         = "us-west-2"
     dynamodb_table = "tfbackstate2708"
     encrypt        = true
   }
 }  
+
 # Create a VPC  (Amazon Virtual Private Cloud (Amazon VPC)  
 resource "aws_vpc" "aws04_VPC" {
   cidr_block = "10.0.0.0/16"
@@ -103,6 +104,7 @@ module "ec2_instance" {
   name = "single-instance"
 
   instance_type          = "t2.micro"
+  ami                    = "ami-0747800eeb9643a8f"
   key_name               = "dev2708"
   monitoring             = true
   vpc_security_group_ids = [aws_security_group.allow_traffic.id]
