@@ -1,0 +1,9 @@
+#logs
+*.log
+#provider
+*.terraform
+#Terraform state files
+*.tfstate
+*.tfstate.*
+#lock-файл:
+.terraform.lock.hcl
